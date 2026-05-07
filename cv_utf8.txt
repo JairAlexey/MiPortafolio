@@ -1,0 +1,50 @@
+Jair Alexey Rueda Manosalvas
+Contacto
+Experiencia
+Educación
+Idiomas Skills(+593) 0996358321 - Quito, Ecuador -  linkedin- alexeyrueda823@gmail.com- portafoliowebIngeniero de Software con enfoque en la creación de soluciones escalables y la optimización de procesos críticos de
+negocio. Especialista en transformar flujos de trabajo manuales en sistemas automatizados de alto rendimiento, con
+experiencia comprobada reduciendo tiempos operativos de semanas a minutos mediante arquitecturas eficientes. Experto
+en el ciclo de vida completo del desarrollo de software, desde el diseño de bases de datos hasta la implementación de
+interfaces de usuario, con una mentalidad orientada a la eficiencia, el análisis de datos y la integración de tecnologías
+emergentes como IoT e IA.
+Freelance - UpWork 
+Ingeniería en Software - Universidad de las Americas - Quito, Ecuador
+Español: Nativo
+Inglés: Intermedio (B2)Lenguajes: JavaScript (ES6+), Python, C#, SQL, Java.
+Desarrollo: Full Stack (Frontend/Backend), REST APIs.
+Frameworks: React, Node.js, .NET, Django, Electron.
+Especialidades: Automatización (n8n), Web Scraping, IoT.
+Herramientas: Git, Docker, Linux (Mint), Microservicios.Investigacion de Mercados - Universidad de las Américas
+Consorcio Inmmokraft Cia. Ltda. Desarrollador Full Stack
+Pasante Asistente de Investigación de Mercados
+Practicas pre profesionales como desarrollador Full StackDiseño y despliegue de aplicaciones web modernas utilizando el stack MERN (MongoDB, Express, React, Node.js).
+Consultoría técnica para la digitalización de procesos, mejorando la usabilidad y el rendimiento de plataformas
+existentes.
+Integración de APIs externas y optimización de bases de datos para proyectos independientes.
+Tesis: Sistema de Monitoreo Virtual con Detección Automática de Comportamiento utilizando Electron, React, Django
+y Python.
+Proyecto Destacado (Ingennials): Videojuego colaborativo en C# con integración de hardware (controles Xbox) para
+interacción en tiempo real.
+Promedio: 8,00
+Informática Cuántica para Todos: Introducción – Fractal Analytics (2026)
+Generative AI Foundations – Pearson / Critical Career Skills (2026)
+Prompt Engineering Foundation – CertiProf (2025)
+Fundamentos en DevOps, APIs y Arquitectura de Microservicios – Udemy (2025)
+Planificación Ágil de Productos de Software – University of Alberta / Coursera (2025)
+Scrum Foundation Learner – CertiProf (2025)
+Business Analysis: Developing Requirements – Udemy (2025)
+Arquitectura de Software Moderna: DDD, Eventos, Microservicios – Udemy (2024)Desarrollé un ecosistema de automatización con Python que redujo el tiempo de generación de reportes de 1 semana a
+15 minutos.
+Implementé un sistema de arquitectura basado en colas y workers para el procesamiento de tareas pesadas en
+segundo plano.
+Optimicé scripts de Web Scraping integrando lógica de reintentos y paralelismo, asegurando la integridad de los datos.
+Creé una plataforma web para la ingesta de datos, sustituyendo flujos manuales de Excel por bases de datos
+centralizadas.
+Desarrollé un Dashboard administrativo completo utilizando C# y SQL para la gestión centralizada de inventario
+inmobiliario.
+Diseñé y normalicé la base de datos relacional, mejorando la eficiencia de las consultas y la visualización de datos.
+Implementé sistemas de monitoreo y automatización de procesos internos en servidores Linux Mint.Enero 2026 - presente
+2022 - 2026Agosto 2025 - Diciembre 2025
+Agosto 2024 - Febrero 2025
+Certificaciones y Cursos

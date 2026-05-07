@@ -1,0 +1,1295 @@
+---
+// Aquí puedes agregar lógica del lado del servidor de Astro si lo necesitas en el futuro.
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jair Rueda - Portafolio</title>
+    <meta name="description" content="Portafolio web de Jair Rueda">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+</head>
+<body>
+    <!-- Contenedor para el orbe 3D -->
+    <div id="canvas-container"></div>
+
+    <!-- Navegación -->
+    <header class="navbar">
+        <a href="#hero" class="logo">
+            <span class="logo-icon-wrapper">
+                <svg class="logo-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <line x1="14" y1="4" x2="10" y2="20"></line>
+                </svg>
+            </span>
+            Jair Rueda
+        </a>
+        <nav class="nav-links">
+            <a href="#experiencia" data-i18n="nav.exp">Experiencia</a>
+            <a href="#habilidades" data-i18n="nav.skills">Habilidades</a>
+            <a href="#proyectos" data-i18n="nav.projects">Proyectos</a>
+            <a href="#contacto" data-i18n="nav.contact">Contacto</a>
+        </nav>
+        <div class="nav-controls" style="display: flex; gap: 1rem; align-items: center; pointer-events: auto;">
+            <button id="lang-toggle" class="icon-btn" aria-label="Cambiar Idioma"><i class="ph ph-translate"></i> <span id="lang-text" style="font-size:0.9rem;">EN</span></button>
+            <button id="theme-toggle" class="icon-btn" aria-label="Cambiar Tema"><i class="ph ph-moon"></i></button>
+            <a href="#contacto" class="btn-primary-small" data-i18n="nav.contact_btn">Contáctame</a>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <div class="content-wrapper">
+        <!-- Hero Section -->
+        <section id="hero" class="hero section">
+            <div class="hero-content">
+                <div class="avatar-container">
+                    <img src="/images/profile.png" alt="Jair Rueda" class="avatar" />
+                    <span class="badge" data-i18n="hero.badge">+1 Año Experiencia</span>
+                </div>
+                <h1 class="hero-title">Jair Rueda</h1>
+                <h2 class="hero-subtitle" data-i18n="hero.subtitle">Ingeniero de Software & Full-Stack Developer</h2>
+                <p class="hero-desc" data-i18n="hero.desc">
+                    Especializado en crear soluciones escalables y optimizar procesos de negocio. Experto en automatización, desarrollo Full Stack (MERN, .NET, Python), y transformación de flujos manuales en sistemas de alto rendimiento.
+                </p>
+                <div class="hero-buttons">
+                    <a href="/Curriculum Harvard Jair Rueda.pdf" download class="btn-secondary" data-i18n="hero.cv">Descargar CV <i class="ph ph-file-pdf"></i></a>
+                    <a href="#contacto" class="btn-primary" data-i18n="hero.contact">Contáctame <i class="ph ph-paper-plane-tilt"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Experience -->
+        <section id="experiencia" class="section">
+            <span class="section-badge" data-i18n="exp.badge">Carrera</span>
+            <h2 class="section-title" data-i18n="exp.title">Experiencia Laboral</h2>
+            <div class="cards-container">
+                <div class="glass-card">
+                    <div class="card-header">
+                        <div class="card-icon" style="background: #10b981; color: white;"><i class="ph ph-rocket-launch"></i></div>
+                        <div>
+                            <h3 data-i18n="exp1.title">Desarrollador Freelance</h3>
+                            <p class="company">UpWork</p>
+                        </div>
+                    </div>
+                    <div class="card-meta">
+                        <span class="pill"><i class="ph ph-calendar-blank"></i> <span data-i18n="exp1.date">Enero 2026 - Presente</span></span>
+                        <span class="pill"><i class="ph ph-map-pin"></i> <span data-i18n="exp1.location">Remoto</span></span>
+                    </div>
+                    <ul class="card-bullets">
+                        <li data-i18n="exp1.b1">Diseño y despliegue de aplicaciones web modernas utilizando el stack MERN (MongoDB, Express, React, Node.js).</li>
+                        <li data-i18n="exp1.b2">Consultoría técnica para la digitalización de procesos, mejorando usabilidad y rendimiento.</li>
+                        <li data-i18n="exp1.b3">Integración de APIs externas y optimización de bases de datos para proyectos independientes.</li>
+                    </ul>
+                </div>
+                
+                <div class="glass-card">
+                    <div class="card-header">
+                        <div class="card-icon" style="background: #f59e0b; color: white;"><i class="ph ph-magnifying-glass"></i></div>
+                        <div>
+                            <h3 data-i18n="exp2.title">Asistente de Investigación / Desarrollo y Análisis de Datos</h3>
+                            <p class="company">Universidad de las Américas</p>
+                        </div>
+                    </div>
+                    <div class="card-meta">
+                        <span class="pill"><i class="ph ph-calendar-blank"></i> <span data-i18n="exp2.date">Agosto 2024 - Feb 2025</span></span>
+                        <span class="pill"><i class="ph ph-map-pin"></i> <span data-i18n="exp2.location">Híbrido</span></span>
+                    </div>
+                    <ul class="card-bullets">
+                        <li data-i18n="exp2.b1">Desarrollé un ecosistema de automatización con Python que redujo la generación de reportes de 1 semana a 15 minutos.</li>
+                        <li data-i18n="exp2.b2">Implementé un sistema basado en colas y workers para procesamiento pesado.</li>
+                        <li data-i18n="exp2.b3">Optimicé scripts de Web Scraping integrando lógica de reintentos y paralelismo.</li>
+                        <li data-i18n="exp2.b4">Implementé sistemas de monitoreo en servidores Linux Mint.</li>
+                    </ul>
+                </div>
+                
+                <div class="glass-card">
+                    <div class="card-header">
+                        <div class="card-icon" style="background: #3b82f6; color: white;"><i class="ph ph-buildings"></i></div>
+                        <div>
+                            <h3 data-i18n="exp3.title">Desarrollador Full Stack</h3>
+                            <p class="company">Consorcio Inmmokraft Cia. Ltda.</p>
+                        </div>
+                    </div>
+                    <div class="card-meta">
+                        <span class="pill"><i class="ph ph-calendar-blank"></i> <span data-i18n="exp3.date">Agosto 2025 - Dic 2025</span></span>
+                        <span class="pill"><i class="ph ph-map-pin"></i> <span data-i18n="exp3.location">Remoto</span></span>
+                    </div>
+                    <ul class="card-bullets">
+                        <li data-i18n="exp3.b1">Desarrollé un Dashboard administrativo completo utilizando C# y SQL para gestión centralizada de inventario inmobiliario.</li>
+                        <li data-i18n="exp3.b2">Diseñé y normalicé bases de datos relacionales, mejorando la eficiencia de consultas.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack -->
+        <section id="habilidades" class="section" style="overflow: hidden; width: 100vw; max-width: 100%;">
+            <span class="section-badge" data-i18n="skills.badge">Tecnologías</span>
+            <h2 class="section-title" data-i18n="skills.title">Tecnologías que utilizo</h2>
+            <div class="marquee-container">
+                <div class="marquee-content">
+                    <div class="tech-item"><i class="devicon-javascript-plain colored"></i> JavaScript</div>
+                    <div class="tech-item"><i class="devicon-react-original colored"></i> React</div>
+                    <div class="tech-item"><i class="devicon-nodejs-plain colored"></i> Node.js</div>
+                    <div class="tech-item"><i class="devicon-python-plain colored"></i> Python</div>
+                    <div class="tech-item"><i class="devicon-django-plain colored"></i> Django</div>
+                    <div class="tech-item"><i class="devicon-csharp-plain colored"></i> C# .NET</div>
+                    <div class="tech-item"><i class="devicon-azuresqldatabase-plain colored"></i> SQL</div>
+                    <div class="tech-item"><i class="devicon-mongodb-plain colored"></i> MongoDB</div>
+                    <div class="tech-item"><i class="devicon-java-plain colored"></i> Java</div>
+                    <div class="tech-item"><i class="devicon-docker-plain colored"></i> Docker</div>
+                    <div class="tech-item"><i class="devicon-linux-plain"></i> Linux</div>
+                    <div class="tech-item"><i class="devicon-kubernetes-plain colored"></i> Microservicios</div>
+                </div>
+                <!-- Duplicado para efecto infinito -->
+                <div class="marquee-content">
+                    <div class="tech-item"><i class="devicon-javascript-plain colored"></i> JavaScript</div>
+                    <div class="tech-item"><i class="devicon-react-original colored"></i> React</div>
+                    <div class="tech-item"><i class="devicon-nodejs-plain colored"></i> Node.js</div>
+                    <div class="tech-item"><i class="devicon-python-plain colored"></i> Python</div>
+                    <div class="tech-item"><i class="devicon-django-plain colored"></i> Django</div>
+                    <div class="tech-item"><i class="devicon-csharp-plain colored"></i> C# .NET</div>
+                    <div class="tech-item"><i class="devicon-azuresqldatabase-plain colored"></i> SQL</div>
+                    <div class="tech-item"><i class="devicon-mongodb-plain colored"></i> MongoDB</div>
+                    <div class="tech-item"><i class="devicon-java-plain colored"></i> Java</div>
+                    <div class="tech-item"><i class="devicon-docker-plain colored"></i> Docker</div>
+                    <div class="tech-item"><i class="devicon-linux-plain"></i> Linux</div>
+                    <div class="tech-item"><i class="devicon-kubernetes-plain colored"></i> Microservicios</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="proyectos" class="section">
+            <span class="section-badge" data-i18n="projects.badge">Portafolio</span>
+            <h2 class="section-title" data-i18n="projects.title">Proyectos Destacados</h2>
+            <div class="projects-grid">
+                <div class="project-card glass-card">
+                    <img src="/images/project1.png" alt="Sistema de Monitoreo Virtual" class="project-img" />
+                    <div class="project-info">
+                        <h3 data-i18n="p1.title">Sistema de Monitoreo Virtual</h3>
+                        <div class="tags">
+                            <span class="tag">Electron</span> <span class="tag">React</span> <span class="tag">Django</span> <span class="tag">Python</span>
+                        </div>
+                        <p data-i18n="p1.desc">Sistema avanzado de escritorio para monitoreo virtual con detección automática de comportamiento utilizando tecnologías web y modelos de IA.</p>
+                        <a href="#" class="btn-link" data-i18n="p.link">Ver Proyecto &nearr;</a>
+                    </div>
+                </div>
+                <div class="project-card glass-card">
+                    <img src="/images/project2.png" alt="Videojuego Ingennials" class="project-img" />
+                    <div class="project-info">
+                        <h3 data-i18n="p2.title">Ingennials (Videojuego)</h3>
+                        <div class="tags">
+                            <span class="tag">C#</span> <span class="tag">Hardware Integrado</span>
+                        </div>
+                        <p data-i18n="p2.desc">Videojuego colaborativo desarrollado en C# con integración directa de hardware utilizando controles de Xbox para interacción en tiempo real.</p>
+                        <a href="#" class="btn-link" data-i18n="p.link">Ver Proyecto &nearr;</a>
+                    </div>
+                </div>
+                <div class="project-card glass-card">
+                    <img src="/images/project3.png" alt="Dashboard Inmobiliario" class="project-img" />
+                    <div class="project-info">
+                        <h3 data-i18n="p3.title">Dashboard Inmobiliario</h3>
+                        <div class="tags">
+                            <span class="tag">C#</span> <span class="tag">.NET</span> <span class="tag">SQL</span>
+                        </div>
+                        <p data-i18n="p3.desc">Plataforma administrativa integral para la gestión y seguimiento del inventario de bienes raíces con bases de datos optimizadas.</p>
+                        <a href="#" class="btn-link" data-i18n="p.link">Ver Proyecto &nearr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contacto" class="section" style="margin-bottom: 5rem;">
+            <h2 class="section-title" data-i18n="contact.title">Ponte en Contacto</h2>
+            <p style="text-align: center; color: var(--nav-text); margin-bottom: 2rem;" data-i18n="contact.desc">¿Tienes un proyecto en mente, una pregunta, o solo quieres saludar? ¡No dudes en escribirme!</p>
+            <form id="contact-form" class="contact-form glass-card">
+                <div class="form-group">
+                    <label data-i18n="contact.name.label">Tu Nombre</label>
+                    <input type="text" name="name" required placeholder="ej. Juan Pérez" data-i18n-placeholder="contact.name.placeholder" />
+                </div>
+                <div class="form-group">
+                    <label data-i18n="contact.email.label">Tu Correo Electrónico</label>
+                    <input type="email" name="email" required placeholder="ej. juan@ejemplo.com" data-i18n-placeholder="contact.email.placeholder" />
+                </div>
+                <div class="form-group">
+                    <label data-i18n="contact.message.label">Tu Mensaje</label>
+                    <textarea name="message" required placeholder="Cuéntame sobre tu proyecto o consulta..." rows="4" data-i18n-placeholder="contact.message.placeholder"></textarea>
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;" data-i18n="contact.submit">Enviar Mensaje</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer section" style="padding: 3rem 2rem; border-top: 1px solid var(--glass-border); margin-top: 5rem; text-align: center; position: relative;">
+        <div class="footer-content" style="display: flex; flex-direction: column; gap: 1rem; color: var(--nav-text);">
+            <p data-i18n="footer.copy">© 2026 Jair Rueda. Todos los derechos reservados.</p>
+            <p><span data-i18n="footer.built">Construido </span><span data-i18n="footer.using">usando Astro, Three.js y Vanilla CSS.</span></p>
+            <div class="footer-links" style="display: flex; justify-content: center; gap: 1rem; font-size: 0.9rem;">
+                <a href="#" style="color: var(--nav-text); text-decoration: none;" data-i18n="footer.cookies">Configuración de Cookies</a> • 
+                <a href="#" style="color: var(--nav-text); text-decoration: none;" data-i18n="footer.privacy">Política de Privacidad</a> • 
+                <a href="#" style="color: var(--nav-text); text-decoration: none;" data-i18n="footer.terms">Términos de Uso</a>
+            </div>
+        </div>
+        <a href="#hero" class="scroll-top" aria-label="Volver arriba" style="position: absolute; right: 3rem; top: 50%; transform: translateY(-50%); background: #4f46e5; color: white; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 50%; text-decoration: none; box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4); transition: transform 0.3s ease;">
+            <i class="ph ph-arrow-up"></i>
+        </a>
+    </footer>
+
+    <!-- Theme & i18n Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Theme setup
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeIcon = themeToggle.querySelector('i');
+            
+            function setTheme(theme) {
+                document.documentElement.setAttribute('data-theme', theme);
+                localStorage.setItem('theme', theme);
+                if (themeIcon) {
+                    themeIcon.className = theme === 'dark' ? 'ph ph-sun' : 'ph ph-moon';
+                }
+                window.dispatchEvent(new CustomEvent('theme-changed', { detail: theme }));
+            }
+
+            const savedTheme = localStorage.getItem('theme');
+            setTheme(savedTheme || 'light');
+
+            if (themeToggle) {
+                themeToggle.addEventListener('click', () => {
+                    const currentTheme = document.documentElement.getAttribute('data-theme');
+                    setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+                });
+            }
+
+            // i18n setup
+            const translations = {
+                es: {
+                    "nav.exp": "Experiencia",
+                    "nav.skills": "Habilidades",
+                    "nav.projects": "Proyectos",
+                    "nav.contact": "Contacto",
+                    "nav.contact_btn": "Contáctame",
+                    "hero.badge": "+1 Año Experiencia",
+                    "hero.subtitle": "Ingeniero de Software & Full-Stack Developer",
+                    "hero.desc": "Especializado en crear soluciones escalables y optimizar procesos de negocio. Experto en automatización, desarrollo Full Stack (MERN, .NET, Python), y transformación de flujos manuales en sistemas de alto rendimiento.",
+                    "hero.cv": "Descargar CV <i class='ph ph-file-pdf'></i>",
+                    "hero.contact": "Contáctame <i class='ph ph-paper-plane-tilt'></i>",
+                    "exp.badge": "Carrera",
+                    "exp.title": "Experiencia Laboral",
+                    "exp1.title": "Desarrollador Freelance",
+                    "exp1.date": "Enero 2026 - Presente",
+                    "exp1.location": "Remoto",
+                    "exp1.b1": "Diseño y despliegue de aplicaciones web modernas utilizando el stack MERN (MongoDB, Express, React, Node.js).",
+                    "exp1.b2": "Consultoría técnica para la digitalización de procesos, mejorando usabilidad y rendimiento.",
+                    "exp1.b3": "Integración de APIs externas y optimización de bases de datos para proyectos independientes.",
+                    "exp2.title": "Asistente de Investigación / Desarrollo y Análisis de Datos",
+                    "exp2.date": "Agosto 2024 - Feb 2025",
+                    "exp2.location": "Híbrido",
+                    "exp2.b1": "Desarrollé un ecosistema de automatización con Python que redujo la generación de reportes de 1 semana a 15 minutos.",
+                    "exp2.b2": "Implementé un sistema basado en colas y workers para procesamiento pesado.",
+                    "exp2.b3": "Optimicé scripts de Web Scraping integrando lógica de reintentos y paralelismo.",
+                    "exp2.b4": "Implementé sistemas de monitoreo en servidores Linux Mint.",
+                    "exp3.title": "Desarrollador Full Stack",
+                    "exp3.date": "Agosto 2025 - Dic 2025",
+                    "exp3.location": "Remoto",
+                    "exp3.b1": "Desarrollé un Dashboard administrativo completo utilizando C# y SQL para gestión centralizada de inventario inmobiliario.",
+                    "exp3.b2": "Diseñé y normalicé bases de datos relacionales, mejorando la eficiencia de consultas.",
+                    "skills.badge": "Tecnologías",
+                    "skills.title": "Tecnologías que utilizo",
+                    "projects.badge": "Portafolio",
+                    "projects.title": "Proyectos Destacados",
+                    "p1.title": "Sistema de Monitoreo Virtual",
+                    "p1.desc": "Sistema avanzado de escritorio para monitoreo virtual con detección automática de comportamiento utilizando tecnologías web y modelos de IA.",
+                    "p2.title": "Ingennials (Videojuego)",
+                    "p2.desc": "Videojuego colaborativo desarrollado en C# con integración directa de hardware utilizando controles de Xbox para interacción en tiempo real.",
+                    "p3.title": "Dashboard Inmobiliario",
+                    "p3.desc": "Plataforma administrativa integral para la gestión y seguimiento del inventario de bienes raíces con bases de datos optimizadas.",
+                    "p.link": "Ver Proyecto &nearr;",
+                    "contact.title": "Ponte en Contacto",
+                    "contact.desc": "¿Tienes un proyecto en mente, una pregunta, o solo quieres saludar? ¡No dudes en escribirme!",
+                    "contact.name.label": "Tu Nombre",
+                    "contact.name.placeholder": "ej. Juan Pérez",
+                    "contact.email.label": "Tu Correo Electrónico",
+                    "contact.email.placeholder": "ej. juan@ejemplo.com",
+                    "contact.message.label": "Tu Mensaje",
+                    "contact.message.placeholder": "Cuéntame sobre tu proyecto o consulta...",
+                    "contact.submit": "Enviar Mensaje",
+                    "footer.copy": "© 2026 Jair Rueda. Todos los derechos reservados.",
+                    "footer.built": "Construido ",
+                    "footer.using": "usando Astro, Three.js y Vanilla CSS.",
+                    "footer.cookies": "Configuración de Cookies",
+                    "footer.privacy": "Política de Privacidad",
+                    "footer.terms": "Términos de Uso"
+                },
+                en: {
+                    "nav.exp": "Experience",
+                    "nav.skills": "Skills",
+                    "nav.projects": "Projects",
+                    "nav.contact": "Contact",
+                    "nav.contact_btn": "Contact Me",
+                    "hero.badge": "+1 Year Experience",
+                    "hero.subtitle": "Software Engineer & Full-Stack Developer",
+                    "hero.desc": "Specialized in creating scalable solutions and optimizing business processes. Expert in automation, Full Stack development (MERN, .NET, Python), and transforming manual workflows into high-performance systems.",
+                    "hero.cv": "Download CV <i class='ph ph-file-pdf'></i>",
+                    "hero.contact": "Contact Me <i class='ph ph-paper-plane-tilt'></i>",
+                    "exp.badge": "Career",
+                    "exp.title": "Work Experience",
+                    "exp1.title": "Freelance Developer",
+                    "exp1.date": "January 2026 - Present",
+                    "exp1.location": "Remote",
+                    "exp1.b1": "Design and deployment of modern web applications using the MERN stack (MongoDB, Express, React, Node.js).",
+                    "exp1.b2": "Technical consulting for process digitalization, improving usability and performance.",
+                    "exp1.b3": "Integration of external APIs and database optimization for independent projects.",
+                    "exp2.title": "Research Assistant / Development and Data Analysis",
+                    "exp2.date": "August 2024 - Feb 2025",
+                    "exp2.location": "Hybrid",
+                    "exp2.b1": "Developed an automation ecosystem with Python that reduced report generation from 1 week to 15 minutes.",
+                    "exp2.b2": "Implemented a queue and worker-based system for heavy processing.",
+                    "exp2.b3": "Optimized Web Scraping scripts integrating retry logic and parallelism.",
+                    "exp2.b4": "Implemented monitoring systems on Linux Mint servers.",
+                    "exp3.title": "Full Stack Developer",
+                    "exp3.date": "August 2025 - Dec 2025",
+                    "exp3.location": "Remote",
+                    "exp3.b1": "Developed a complete administrative Dashboard using C# and SQL for centralized real estate inventory management.",
+                    "exp3.b2": "Designed and normalized relational databases, improving query efficiency.",
+                    "skills.badge": "Technologies",
+                    "skills.title": "Technologies I use",
+                    "projects.badge": "Portfolio",
+                    "projects.title": "Featured Projects",
+                    "p1.title": "Virtual Monitoring System",
+                    "p1.desc": "Advanced desktop system for virtual monitoring with automatic behavior detection using web technologies and AI models.",
+                    "p2.title": "Ingennials (Video Game)",
+                    "p2.desc": "Collaborative video game developed in C# with direct hardware integration using Xbox controllers for real-time interaction.",
+                    "p3.title": "Real Estate Dashboard",
+                    "p3.desc": "Comprehensive administrative platform for managing and tracking real estate inventory with optimized databases.",
+                    "p.link": "View Project &nearr;",
+                    "contact.title": "Get in Touch",
+                    "contact.desc": "Have a project in mind, a question, or just want to say hi? Don't hesitate to write to me!",
+                    "contact.name.label": "Your Name",
+                    "contact.name.placeholder": "e.g. John Doe",
+                    "contact.email.label": "Your Email",
+                    "contact.email.placeholder": "e.g. john@example.com",
+                    "contact.message.label": "Your Message",
+                    "contact.message.placeholder": "Tell me about your project or inquiry...",
+                    "contact.submit": "Send Message",
+                    "footer.copy": "© 2026 Jair Rueda. All rights reserved.",
+                    "footer.built": "Built ",
+                    "footer.using": "using Astro, Three.js and Vanilla CSS.",
+                    "footer.cookies": "Cookie Settings",
+                    "footer.privacy": "Privacy Policy",
+                    "footer.terms": "Terms of Use"
+                }
+            };
+
+            const langToggle = document.getElementById('lang-toggle');
+            const langText = document.getElementById('lang-text');
+            
+            function setLanguage(lang) {
+                localStorage.setItem('language', lang);
+                if (langText) {
+                    langText.innerText = lang === 'es' ? 'EN' : 'ES'; 
+                }
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    if (translations[lang] && translations[lang][key]) {
+                        el.innerHTML = translations[lang][key];
+                    }
+                });
+                document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                    const key = el.getAttribute('data-i18n-placeholder');
+                    if (translations[lang] && translations[lang][key]) {
+                        el.setAttribute('placeholder', translations[lang][key]);
+                    }
+                });
+            }
+
+            const systemLang = navigator.language.startsWith('es') ? 'es' : 'en';
+            let currentLang = localStorage.getItem('language') || systemLang;
+            setLanguage(currentLang);
+
+            if (langToggle) {
+                langToggle.addEventListener('click', () => {
+                    currentLang = currentLang === 'es' ? 'en' : 'es';
+                    setLanguage(currentLang);
+                });
+            }
+        });
+    </script>
+
+    <!-- EmailJS Integration -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("IWaZ18fJNXYKTo55d");
+        })();
+
+        window.addEventListener('DOMContentLoaded', function() {
+            // Navbar scroll effect
+            const navbar = document.querySelector('.navbar');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    
+                    const btn = contactForm.querySelector('button[type="submit"]');
+                    const originalText = btn.innerText;
+                    btn.innerText = 'Enviando...';
+                    
+                    // OJO: Se usó la misma clave para Template ID. Si falla, debes poner el Template ID real aquí (usualmente algo como template_xxxx).
+                    const templateID = 'template_uwm01gp'; 
+                    
+                    emailjs.sendForm('service_92eiygr', templateID, this)
+                        .then(function() {
+                            btn.innerText = '¡Mensaje Enviado! ✔️';
+                            contactForm.reset();
+                            setTimeout(() => btn.innerText = originalText, 4000);
+                        }, function(error) {
+                            btn.innerText = 'Error al enviar ❌';
+                            console.error('FAILED...', error);
+                            setTimeout(() => btn.innerText = originalText, 4000);
+                        });
+                });
+            }
+        });
+    </script>
+
+    <script>
+        import * as THREE from 'three';
+
+        const container = document.getElementById('canvas-container');
+
+        // Escena
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(document.documentElement.getAttribute('data-theme') === 'dark' ? 0x0f1115 : 0xffffff);
+        scene.fog = new THREE.Fog(scene.background, 10, 25);
+
+        window.addEventListener('theme-changed', (e) => {
+            const color = e.detail === 'dark' ? 0x0f1115 : 0xffffff;
+            scene.background.setHex(color);
+            scene.fog.color.setHex(color);
+        });
+
+        // Cámara
+        const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.z = 15;
+
+        // Renderizador
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        container.appendChild(renderer.domElement);
+
+        let mouseX = 0;
+        let mouseY = 0;
+        let targetX = 0;
+        let targetY = 0;
+        const windowHalfX = window.innerWidth / 2;
+        const windowHalfY = window.innerHeight / 2;
+
+        document.addEventListener('mousemove', (event) => {
+            mouseX = (event.clientX - windowHalfX);
+            mouseY = (event.clientY - windowHalfY);
+        });
+
+        document.addEventListener('touchmove', (event) => {
+            if (event.touches.length > 0) {
+                mouseX = (event.touches[0].clientX - windowHalfX);
+                mouseY = (event.touches[0].clientY - windowHalfY);
+            }
+        }, { passive: true });
+
+        // --- SISTEMA DE PARTÍCULAS ---
+        const particleCount = 4500;
+        const geometry = new THREE.BufferGeometry();
+        const positions = new Float32Array(particleCount * 3);
+        const colors = new Float32Array(particleCount * 3);
+        const sizes = new Float32Array(particleCount);
+        const phases = new Float32Array(particleCount); // Para controlar el fade in/out
+        const baseSizes = new Float32Array(particleCount); // Guardamos el tamaño original
+
+        const radius = 6;
+        const colorPalette = [
+            new THREE.Color('#FF5722'),
+            new THREE.Color('#FFC107'),
+            new THREE.Color('#2196F3'),
+            new THREE.Color('#9C27B0'),
+            new THREE.Color('#E91E63'),
+            new THREE.Color('#00BCD4')
+        ];
+
+        for (let i = 0; i < particleCount; i++) {
+            const phi = Math.acos(-1 + (2 * i) / particleCount);
+            const theta = Math.sqrt(particleCount * Math.PI) * phi;
+            const r = radius + (Math.random() * 0.8 - 0.4);
+
+            positions[i * 3] = r * Math.cos(theta) * Math.sin(phi);
+            positions[i * 3 + 1] = r * Math.sin(theta) * Math.sin(phi);
+            positions[i * 3 + 2] = r * Math.cos(phi);
+
+            const color = colorPalette[Math.floor(Math.random() * colorPalette.length)];
+            colors[i * 3] = color.r;
+            colors[i * 3 + 1] = color.g;
+            colors[i * 3 + 2] = color.b;
+
+            const size = Math.random() < 0.1 ? Math.random() * 0.3 + 0.15 : Math.random() * 0.1 + 0.05;
+            baseSizes[i] = size;
+            sizes[i] = size;
+            
+            // Fase aleatoria para que parpadeen de forma desincronizada
+            phases[i] = Math.random() * Math.PI * 2; 
+        }
+
+        geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+        geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+        geometry.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
+        geometry.setAttribute('phase', new THREE.BufferAttribute(phases, 1));
+
+        const uniforms = {
+            time: { value: 0 }
+        };
+
+        const material = new THREE.ShaderMaterial({
+            uniforms: uniforms,
+            vertexShader: `
+                attribute float size;
+                attribute float phase;
+                varying vec3 vColor;
+                varying float vAlpha;
+                uniform float time;
+                void main() {
+                    vColor = color;
+                    
+                    // Onda que viaja de abajo hacia arriba
+                    float wave = sin(position.y * 1.5 - time * 2.0) * 0.5 + 0.5;
+                    
+                    // Parpadeo individual
+                    float blink = sin(time * 1.5 + phase) * 0.5 + 0.5;
+                    
+                    // Combinación de la onda y el parpadeo
+                    float combined = wave * 0.6 + blink * 0.4;
+                    // Aseguramos un mínimo de visibilidad (0.25 a 1.0) para mantener la forma del orbe
+                    float activeFactor = combined * 0.75 + 0.25;
+                    vAlpha = activeFactor;
+                    
+                    vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+                    // Factor de escala incrementado para hacerlas más notorias
+                    gl_PointSize = size * activeFactor * 220.0 * (1.0 / -mvPosition.z);
+                    gl_Position = projectionMatrix * mvPosition;
+                }
+            `,
+            fragmentShader: `
+                varying vec3 vColor;
+                varying float vAlpha;
+                void main() {
+                    vec2 coord = gl_PointCoord - vec2(0.5);
+                    float dist = length(coord);
+                    if(dist > 0.5) discard;
+                    
+                    // Bordes suaves y más brillo general
+                    float alpha = smoothstep(0.5, 0.3, dist) * vAlpha;
+                    gl_FragColor = vec4(vColor, alpha * 1.0);
+                }
+            `,
+            transparent: true,
+            vertexColors: true,
+            depthWrite: false
+        });
+
+        const particles = new THREE.Points(geometry, material);
+        scene.add(particles);
+
+        const outerGeometry = geometry.clone();
+        const outerMaterial = material.clone();
+        outerMaterial.uniforms = uniforms; // Compartir el mismo tiempo
+        const outerParticles = new THREE.Points(outerGeometry, outerMaterial);
+        outerParticles.scale.set(1.2, 1.2, 1.2);
+        scene.add(outerParticles);
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        const clock = new THREE.Clock();
+
+        function animate() {
+            requestAnimationFrame(animate);
+            const elapsedTime = clock.getElapsedTime();
+
+            targetX = mouseX * 0.001;
+            targetY = mouseY * 0.001;
+
+            particles.rotation.y += 0.002;
+            particles.rotation.x += 0.001;
+            outerParticles.rotation.y -= 0.001;
+            outerParticles.rotation.x -= 0.002;
+
+            particles.rotation.y += 0.05 * (targetX - particles.rotation.y);
+            particles.rotation.x += 0.05 * (targetY - particles.rotation.x);
+
+            scene.position.x += (mouseX * 0.005 - scene.position.x) * 0.05;
+            scene.position.y += (-mouseY * 0.005 - scene.position.y) * 0.05;
+
+            // Actualizar el tiempo para los shaders
+            uniforms.time.value = elapsedTime;
+
+            const scale = 1 + Math.sin(elapsedTime * 0.5) * 0.02;
+            particles.scale.set(scale, scale, scale);
+
+            renderer.render(scene, camera);
+        }
+
+        animate();
+    </script>
+</body>
+</html>
+
+<style is:global>
+    :root {
+        --bg-color: #ffffff;
+        --text-color: #111111;
+        --btn-primary-bg: #4f46e5;
+        --btn-primary-text: #ffffff;
+        --btn-secondary-bg: #f5f5f7;
+        --btn-secondary-text: #111111;
+        --btn-secondary-hover: #e8e8ed;
+        --nav-text: #555555;
+        --glass-bg: rgba(255, 255, 255, 0.7);
+        --glass-border: rgba(255, 255, 255, 0.8);
+        --glass-shadow: rgba(0, 0, 0, 0.05);
+        --nav-scroll-bg: rgba(255, 255, 255, 0.85);
+        --pill-bg: #f3f4f6;
+        --tech-bg: rgba(255, 255, 255, 0.8);
+        --tech-border: rgba(0,0,0,0.05);
+        --input-bg: rgba(255, 255, 255, 0.9);
+        --input-border: rgba(0,0,0,0.1);
+        --tag-bg: #eef2ff;
+        --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    :root[data-theme="dark"] {
+        --bg-color: #0f1115;
+        --text-color: #f1f5f9;
+        --btn-primary-bg: #4f46e5;
+        --btn-primary-text: #ffffff;
+        --btn-secondary-bg: #1e293b;
+        --btn-secondary-text: #f1f5f9;
+        --btn-secondary-hover: #334155;
+        --nav-text: #94a3b8;
+        --glass-bg: rgba(30, 41, 59, 0.7);
+        --glass-border: rgba(255, 255, 255, 0.1);
+        --glass-shadow: rgba(0, 0, 0, 0.3);
+        --nav-scroll-bg: rgba(15, 17, 21, 0.85);
+        --pill-bg: #1e293b;
+        --tech-bg: rgba(30, 41, 59, 0.8);
+        --tech-border: rgba(255, 255, 255, 0.1);
+        --input-bg: rgba(30, 41, 59, 0.6);
+        --input-border: rgba(255, 255, 255, 0.1);
+        --tag-bg: #1e293b;
+    }
+    
+    .icon-btn {
+        background: none;
+        border: none;
+        font-size: 1.2rem;
+        color: var(--text-color);
+        cursor: pointer;
+        padding: 0.5rem;
+        border-radius: 50%;
+        transition: background 0.2s ease;
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+        font-family: var(--font-main);
+        font-weight: 600;
+    }
+
+    .icon-btn:hover {
+        background: var(--glass-shadow);
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: var(--font-main);
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    #canvas-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+        pointer-events: auto;
+    }
+
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 1.5rem 3rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+        pointer-events: none;
+        transition: all 0.3s ease;
+    }
+
+    .navbar.scrolled {
+        background: var(--nav-scroll-bg);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        box-shadow: 0 4px 30px var(--glass-shadow);
+        padding: 1rem 3rem;
+    }
+
+    .navbar.scrolled > * {
+        pointer-events: auto;
+    }
+
+    .navbar > * {
+        pointer-events: auto;
+    }
+
+    .logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1.5rem;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        color: #4b55c6;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .logo-icon-wrapper {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo-icon {
+        transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .logo:hover .logo-icon {
+        transform: rotate(360deg);
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: var(--nav-text);
+        font-size: 0.95rem;
+        font-weight: 500;
+        transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+        color: var(--text-color);
+    }
+
+    .btn-primary-small {
+        background-color: var(--btn-primary-bg);
+        color: var(--btn-primary-text);
+        padding: 0.6rem 1.2rem;
+        border-radius: 2rem;
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .btn-primary-small:hover {
+        opacity: 0.9;
+        transform: scale(1.02);
+    }
+
+    .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background-color: var(--btn-primary-bg);
+        color: var(--btn-primary-text);
+        padding: 1rem 1.8rem;
+        border-radius: 2rem;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .btn-primary:hover {
+        opacity: 0.9;
+        transform: scale(1.02);
+    }
+
+    .btn-secondary {
+        background-color: var(--btn-secondary-bg);
+        color: var(--btn-secondary-text);
+        padding: 1rem 1.8rem;
+        border-radius: 2rem;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn-secondary:hover {
+        background-color: var(--btn-secondary-hover);
+        transform: scale(1.02);
+    }
+
+    .icon {
+        width: 1.2rem;
+        height: 1.2rem;
+    }
+
+    .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0 2rem;
+        pointer-events: none;
+    }
+
+    .hero-content {
+        max-width: 900px;
+        z-index: 10;
+        pointer-events: auto;
+    }
+
+    .hero-title {
+        font-size: clamp(3rem, 7vw, 6rem);
+        line-height: 1.05;
+        font-weight: 500;
+        letter-spacing: -0.04em;
+        margin-bottom: 2.5rem;
+        color: var(--text-color);
+    }
+
+    .hero-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* --- Nuevas Secciones --- */
+    .content-wrapper {
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        pointer-events: auto; /* Para poder scrollear y clickear */
+    }
+
+    .section {
+        padding: 5rem 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section-badge {
+        background: #eef2ff;
+        color: #4f46e5;
+        padding: 0.4rem 1rem;
+        border-radius: 2rem;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        font-weight: 800;
+        margin-bottom: 3rem;
+        color: var(--text-color);
+        letter-spacing: -0.02em;
+    }
+
+    /* Hero */
+    .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding-top: 5rem;
+    }
+
+    .hero-content {
+        max-width: 800px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .avatar-container {
+        position: relative;
+        margin-bottom: 2rem;
+    }
+
+    .avatar {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid white;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .badge {
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #3b49df;
+        color: white;
+        padding: 0.4rem 1rem;
+        border-radius: 1rem;
+        font-size: 0.8rem;
+        font-weight: 600;
+        white-space: nowrap;
+        box-shadow: 0 4px 10px rgba(59, 73, 223, 0.3);
+    }
+
+    .hero-title {
+        font-size: clamp(3rem, 6vw, 5rem);
+        font-weight: 800;
+        letter-spacing: -0.04em;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.25rem;
+        color: #4b55c6;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-desc {
+        color: var(--nav-text);
+        font-size: 1.1rem;
+        line-height: 1.6;
+        max-width: 600px;
+        margin-bottom: 2.5rem;
+    }
+
+    .hero-buttons {
+        display: flex;
+        gap: 1rem;
+    }
+
+    /* Glass Cards */
+    .glass-card {
+        background: var(--glass-bg);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid var(--glass-border);
+        border-radius: 1.5rem;
+        padding: 2rem;
+        box-shadow: 0 10px 30px var(--glass-shadow);
+        width: 100%;
+        max-width: 800px;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .glass-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    /* Experience */
+    .cards-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .card-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .card-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .card-header h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    .company {
+        color: #4b55c6;
+        font-weight: 600;
+    }
+
+    .card-meta {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .pill {
+        background: var(--pill-bg);
+        color: var(--text-color);
+        padding: 0.4rem 0.8rem;
+        border-radius: 1rem;
+        font-size: 0.85rem;
+        font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3rem;
+    }
+
+    .card-bullets {
+        padding-left: 1.5rem;
+        color: var(--nav-text);
+        line-height: 1.6;
+    }
+    
+    .card-bullets li {
+        margin-bottom: 0.5rem;
+    }
+
+    /* Tech Stack Marquee */
+    .marquee-container {
+        display: flex;
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        position: relative;
+        padding: 2rem 0;
+        mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    }
+
+    .marquee-content {
+        display: flex;
+        flex-shrink: 0;
+        animation: marquee 35s linear infinite;
+    }
+
+    .marquee-container:hover .marquee-content {
+        animation-play-state: paused;
+    }
+
+    @keyframes marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-100%); }
+    }
+
+    .tech-item {
+        background: var(--tech-bg);
+        border: 1px solid var(--tech-border);
+        padding: 1rem 2rem;
+        margin: 0 1rem;
+        border-radius: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: var(--text-color);
+        box-shadow: 0 4px 15px var(--glass-shadow);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        cursor: default;
+    }
+    
+    .tech-item i {
+        font-size: 1.8rem;
+    }
+
+    .tech-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    }
+
+    /* Projects */
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        width: 100%;
+    }
+
+    .project-card {
+        padding: 0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .project-img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .project-card:hover .project-img {
+        transform: scale(1.08);
+    }
+
+    .project-info {
+        padding: 1.5rem;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .project-info h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .tags {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .tag {
+        background: var(--tag-bg);
+        color: #4f46e5;
+        font-size: 0.75rem;
+        padding: 0.2rem 0.6rem;
+        border-radius: 1rem;
+        font-weight: 600;
+    }
+
+    .project-info p {
+        color: var(--nav-text);
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin-bottom: 1.5rem;
+        flex-grow: 1;
+    }
+
+    .btn-link {
+        color: #4f46e5;
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3rem;
+    }
+
+    /* Contact Form */
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        max-width: 600px;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .form-group label {
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: var(--text-color);
+    }
+
+    .form-group input, .form-group textarea {
+        padding: 0.8rem 1rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--input-border);
+        font-family: inherit;
+        background: var(--input-bg);
+        color: var(--text-color);
+        font-size: 1rem;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .form-group input:focus, .form-group textarea:focus {
+        outline: none;
+        border-color: #4f46e5;
+        box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+    }
+
+    @media (max-width: 768px) {
+        .navbar {
+            padding: 1.5rem;
+        }
+        .nav-links {
+            display: none;
+        }
+        .hero-buttons {
+            flex-direction: column;
+            width: 100%;
+        }
+        .hero-buttons a {
+            width: 100%;
+            justify-content: center;
+        }
+        .hero-title {
+            font-size: 2.5rem;
+        }
+        .projects-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
